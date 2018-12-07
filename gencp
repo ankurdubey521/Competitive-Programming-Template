@@ -1,0 +1,3 @@
+#! /bin/bash
+cat ./cp_temp > sol.cpp
+vim sol.cpp

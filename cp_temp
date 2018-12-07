@@ -1,0 +1,17 @@
+//#define FILEIO
+#define MODVAL 1000000007
+#define INT_MAX 2147483647
+#include<bits/stdc++.h>
+
+using namespace std;
+
+int main(){
+	ios_base::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+	#ifdef FILEIO
+	freopen("in", "r", stdin);
+	freopen("out", "w", stdout);
+	#endif
+	return 0;
+}
