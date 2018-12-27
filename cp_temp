@@ -1,6 +1,6 @@
 //#define FILEIO
 #define MODVAL 1000000007
-#define INT_MAX 0xFFFFFf
+#define INT_MAX 0xFFFFFF
 #include<bits/stdc++.h>
 
 using namespace std;
