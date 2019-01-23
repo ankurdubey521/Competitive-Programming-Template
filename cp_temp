@@ -1,6 +1,8 @@
 //#define FILEIO
 #include<bits/stdc++.h>
 
+using namespace std;
+
 const int64_t MODVAL = 1e9 + 7;
 const int INT_MAX = 0xFFFFFF;
 
@@ -14,8 +16,6 @@ int64_t power(int64_t x, int64_t n, int64_t mod){
 	int64_t temp = power(x, n / 2, mod);
 	return (temp * temp) % modval;
 }
-
-using namespace std;
 
 int main(){
 	ios_base::sync_with_stdio(false);
