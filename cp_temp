@@ -4,7 +4,6 @@
 using namespace std;
 
 const int64_t MODVAL = 1e9 + 7;
-const int INT_MAX = 0xFFFFFF;
 
 int64_t power(int64_t x, int64_t n, int64_t mod){
 	if(n == 0){
