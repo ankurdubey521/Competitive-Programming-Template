@@ -1,9 +1,14 @@
 //#define FILEIO
+//#define USE_BOOST
+
 #include<bits/stdc++.h>
+
+#ifdef USE_BOOST
 #include<boost/multiprecision/cpp_int.hpp>
+using cpp_int = boost::multiprecision::cpp_int;
+#endif
 
 using namespace std;
-using cpp_int = boost::multiprecision::cpp_int;
 
 const int64_t MODVAL = 1e9 + 7;
 
