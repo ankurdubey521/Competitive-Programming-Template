@@ -10,10 +10,23 @@ using cpp_int = boost::multiprecision::cpp_int;
 
 using namespace std;
 
+
 template <typename T>
-void readv(vector<T> &v){
-	for(auto &x: v){
-		cin >> x;
+void readv(vector<T> &v, int offset = 0){
+	for(int i = offset; i < v.size(); ++i){
+		cin >> v[i];
+	}
+}
+template <typename T>
+void readv(vector<vector<T>> &v, int offset = 0){
+	for(int i = offset; i < v.size(); ++i){
+		readv(v[i], offset);
+	}
+}
+template <typename T1, typename T2>
+void readv(vector<pair<T1, T2>> &v, int offset = 0){
+	for(int i = offset; i < v.size(); ++i){
+		cin >> v[i].first >> v[i].second;
 	}
 }
 
