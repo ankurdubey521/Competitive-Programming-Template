@@ -1,20 +1,33 @@
-//#define ENABLE_FILEIO
 //#define ENABLE_BOOST
+//#define ENABLE_DISPLAY_TIME_ELAPSED
+#define ENABLE_FAST_IO
+//#define ENABLE_FILE_IO
 //#define ENABLE_PBDS
-#define ENABLE_FASTIO
 
-#include<bits/stdc++.h>
+#include <bits/stdc++.h>
 using namespace std;
+template <typename T>
+using min_priority_que = priority_queue<T, vector<T>, greater<T>>;
+template <typename T>
+using max_priority_que = priority_queue<T, vector<T>, less<T>>;
 
 /* Optional Units */
 #ifdef ENABLE_BOOST
-#include<boost/multiprecision/cpp_int.hpp>
+#include <boost/multiprecision/cpp_int.hpp>
 using cpp_int = boost::multiprecision::cpp_int;
 #endif
 
+#ifdef ENABLE_DISPLAY_TIME_ELAPSED
+#include <chrono>
+using time_point = chrono::steady_clock::time_point;
+time_point now(){
+	return chrono::steady_clock::now();
+}
+#endif
+
 #ifdef ENABLE_PBDS
-#include<ext/pb_ds/assoc_container.hpp> 
-#include<ext/pb_ds/tree_policy.hpp>
+#include <ext/pb_ds/assoc_container.hpp> 
+#include <ext/pb_ds/tree_policy.hpp>
 using namespace __gnu_pbds;
 template <typename T>
 using orderedSet = tree<T, null_type, less<T>, rb_tree_tag, tree_order_statistics_node_update>;
@@ -83,16 +96,31 @@ int64_t inv(int64_t n, int64_t mod = MODVAL){
 /* Main */
 int main(){
 
-	#ifdef ENABLE_FASTIO
+	#ifdef ENABLE_DISPLAY_TIME_ELAPSED
+	time_point startTimeOfProgram = now();
+	#endif
+
+	#ifdef ENABLE_FAST_IO
 	ios_base::sync_with_stdio(false);
 	cin.tie(NULL);
 	cout.tie(NULL);
 	#endif
 
-	#ifdef ENABLE_FILEIO
+	#ifdef ENABLE_FILE_IO
 	freopen("in", "r", stdin);
 	freopen("out", "w", stdout);
 	#endif
-    
+
+	//START OF PROBLEM LOGIC
+
+	
+
+	//END OF PROBLEM LOGIC
+
+	#ifdef ENABLE_DISPLAY_TIME_ELAPSED
+	time_point endTimeOfProgram = now();
+	cout << "Time Elapsed: " << chrono::duration_cast<chrono::milliseconds>(endTimeOfProgram - startTimeOfProgram).count() << " ms\n";
+	#endif 
+
  	return 0;
 }
