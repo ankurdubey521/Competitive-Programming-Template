@@ -39,7 +39,7 @@ using ordered_map = tree<T1, T2, less<T1>, rb_tree_tag, tree_order_statistics_no
 #endif
 
 /* Constants */
-const ll MODVAL = 1e9 + 7;
+constexpr ll MODVAL = 1e9 + 7;
 
 /* Input Helpers */
 template <typename T1, typename T2>
@@ -94,16 +94,6 @@ ll inv(ll n, ll mod = MODVAL){
 		modinv[n] = powermod(n, mod - 2, mod);
 	}
 	return modinv[n];
-}
-
-ll ceilLog(ll K) {
-	if(K == 1) {return 0;}
-	ll k = 1, count = 0;
-	while(k < K) {
-		k *= 2;
-		++count;
-	}
-	return count;
 }
 
 /* Main */
