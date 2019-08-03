@@ -7,6 +7,7 @@
 #include <bits/stdc++.h>
 using namespace std;
 using ll = int64_t;
+using ld = long double;
 template <typename T>
 using vc = vector<T>;
 template <typename T>
