@@ -4,14 +4,25 @@
 //#define ENABLE_FILE_IO
 //#define ENABLE_PBDS
 
+/* Core Units */
 #include <bits/stdc++.h>
 using namespace std;
 using ll = int64_t;
 using ld = long double;
+
 template <typename T>
 using vc = vector<T>;
+
+template <typename T>
+using vvc = vector<vector<T>>;
+
+using vcl = vector<ll>;
+using vvcl = vector<vector<ll>>;
+using vcd = vector<ld>;
+
 template <typename T>
 using min_priority_queue = priority_queue<T, vc<T>, greater<T>>;
+
 template <typename T>
 using max_priority_queue = priority_queue<T, vc<T>, less<T>>;
 
