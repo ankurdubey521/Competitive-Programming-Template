@@ -79,6 +79,15 @@ istream& operator>>(istream &obj, vc<T> &v){
 	return obj;
 }
 
+/* Output Helpers */
+template <typename T>
+ostream& operator<<(ostream &obj, vc<T> &v){
+	for(auto &x: v) {
+		cout << x << " ";
+	}
+	return obj;
+}
+
 /* Math Functions */
 ll powermod(ll x, ll n, ll mod = MODVAL){
 	if(n == 0){
@@ -108,6 +117,12 @@ ll inv(ll n, ll mod = MODVAL){
 	return modinv[n];
 }
 
+/* Misc */
+template <typename T1, typename T2>
+auto P(T1 x, T2 y) -> pair<T1, T2> {
+	return make_pair(x, y);
+}
+
 /* Main */
 int main(){
 
@@ -128,7 +143,7 @@ int main(){
 
 	//START OF PROBLEM LOGIC
 	//int T; cin >> T; while(T--){
-
+		
 	//}
 	//END OF PROBLEM LOGIC
 
