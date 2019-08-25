@@ -1,7 +1,7 @@
 //#define ENABLE_BOOST
-//#define ENABLE_DISPLAY_TIME_ELAPSED
+#define ENABLE_DISPLAY_TIME_ELAPSED
 #define ENABLE_FAST_IO
-//#define ENABLE_FILE_IO
+#define ENABLE_FILE_IO
 //#define ENABLE_PBDS
 
 /* Core Units */
@@ -17,8 +17,12 @@ template <typename T>
 using vvc = vector<vector<T>>;
 
 using vcl = vector<ll>;
+using vcpl = vector<pair<ll, ll>>;
 using vvcl = vector<vector<ll>>;
+using vvcpl = vector<vector<pair<ll, ll>>>;
 using vcd = vector<ld>;
+
+using pl = pair<ll, ll>;
 
 template <typename T>
 using min_priority_queue = priority_queue<T, vc<T>, greater<T>>;
@@ -110,11 +114,60 @@ ll power(ll x, ll n){
 	return (temp * temp);
 }
 map<ll, ll> modinv;
-ll inv(ll n, ll mod = MODVAL){
+vcl fac;
+ll inv(ll n, ll mod = MODVAL) {
 	if(modinv[n] == 0){
 		modinv[n] = powermod(n, mod - 2, mod);
 	}
 	return modinv[n];
+}
+ll fact(ll n, ll mod = MODVAL) {
+	if(fac.size() == 0) {
+		fac = vcl(1e5, 1);
+		for(ll i = 1; i < fac.size(); ++i) {
+			fac[i] = (i * fac[i - 1]) % mod;
+		}
+	}
+	return fac[n];
+}
+ll ncr(ll n, ll r, ll mod = MODVAL) {
+	if (n < r) {
+		return 0;
+	}
+	ll ans = fact(n, mod);
+	ans *= inv(fact(n - r, mod), mod);
+	ans %= mod;
+	ans *= inv(fact(r, mod), mod);
+	ans %= mod;
+	return ans;
+}
+ll nc2(ll n, ll mod = MODVAL) {
+	if(n % 2) {
+		return (n * ((n - 1) / 2)) % mod;
+	} else {
+		return ((n / 2) * (n - 1)) % mod;
+	}
+}
+ll nc3(ll n, ll mod = MODVAL) {
+	vcl tmp = {n , n - 1, n - 2};
+	for(auto &x: tmp) {
+		if(x % 2 == 0) {
+			x /= 2;
+			break;
+		}
+	}
+	for(auto &x: tmp) {
+		if(x % 3 == 0) {
+			x /= 3;
+			break;
+		}
+	}
+	ll ans = 1;
+	for(auto &x: tmp) {
+		ans *= x;
+		ans %= mod;
+	}
+	return ans;
 }
 
 /* Misc */
