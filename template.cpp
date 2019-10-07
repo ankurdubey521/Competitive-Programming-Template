@@ -21,8 +21,7 @@ using vcpl = vector<pair<ll, ll>>;
 using vvcl = vector<vector<ll>>;
 using vvcpl = vector<vector<pair<ll, ll>>>;
 using vcd = vector<ld>;
-
-using pl = pair<ll, ll>;
+using pl = pair<ll,ll>;
 
 template <typename T>
 using min_priority_queue = priority_queue<T, vc<T>, greater<T>>;
@@ -55,7 +54,7 @@ using ordered_map = tree<T1, T2, less<T1>, rb_tree_tag, tree_order_statistics_no
 #endif
 
 /* Constants */
-constexpr ll MODVAL = 1e9 + 7;
+const ll MODVAL = 1e9 + 7;
 
 /* Input Helpers */
 template <typename T1, typename T2>
@@ -149,31 +148,31 @@ ll nc2(ll n, ll mod = MODVAL) {
 	}
 }
 ll nc3(ll n, ll mod = MODVAL) {
-	vcl tmp = {n , n - 1, n - 2};
-	for(auto &x: tmp) {
+	vcl temp = {n , n - 1, n - 2};
+	for(auto &x: temp) {
 		if(x % 2 == 0) {
 			x /= 2;
 			break;
 		}
 	}
-	for(auto &x: tmp) {
+	for(auto &x: temp) {
 		if(x % 3 == 0) {
 			x /= 3;
 			break;
 		}
 	}
 	ll ans = 1;
-	for(auto &x: tmp) {
+	for(auto &x: temp) {
 		ans *= x;
 		ans %= mod;
 	}
 	return ans;
 }
 
-/* Misc */
+// Miscellaneous 
 template <typename T1, typename T2>
 auto P(T1 x, T2 y) -> pair<T1, T2> {
-	return make_pair(x, y);    
+	return make_pair(x, y);
 }
 
 /* Main */
@@ -197,12 +196,13 @@ int main(){
 	//START OF PROBLEM LOGIC
 	//int T; cin >> T; while(T--){
 		
+
 	//}
 	//END OF PROBLEM LOGIC
 
 	#ifdef ENABLE_DISPLAY_TIME_ELAPSED
 	time_point endTimeOfProgram = now();
-	cout << "Time Elapsed: " << chrono::duration_cast<chrono::milliseconds>(endTimeOfProgram - startTimeOfProgram).count() << " ms\n";
+	cout << "Time Elapsed: "<< chrono::duration_cast<chrono::milliseconds>(endTimeOfProgram - startTimeOfProgram).count() << " ms\n";
 	#endif 
 
  	return 0;
