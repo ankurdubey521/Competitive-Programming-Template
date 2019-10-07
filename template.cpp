@@ -141,11 +141,10 @@ ll ncr(ll n, ll r, ll mod = MODVAL) {
 	return ans;
 }
 ll nc2(ll n, ll mod = MODVAL) {
-	if(n % 2) {
+	if(n % 2) 
 		return (n * ((n - 1) / 2)) % mod;
-	} else {
+	else 
 		return ((n / 2) * (n - 1)) % mod;
-	}
 }
 ll nc3(ll n, ll mod = MODVAL) {
 	vcl temp = {n , n - 1, n - 2};
