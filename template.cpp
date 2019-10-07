@@ -172,7 +172,7 @@ ll nc3(ll n, ll mod = MODVAL) {
 // Miscellaneous 
 template <typename T1, typename T2>
 auto P(T1 x, T2 y) -> pair<T1, T2> {
-	return make_pair(x, y);
+	return make_pair(x, y);   
 }
 
 /* Main */
